@@ -1,0 +1,25 @@
+[package]
+name = "floatconv-fuzz"
+version = "0.0.0"
+authors = ["Automatically generated"]
+publish = false
+edition = "2018"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+
+[dependencies.floatconv]
+path = ".."
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "floatconv-fuzz"
+path = "fuzz_targets/floatconv-fuzz.rs"
+test = false
+doc = false
