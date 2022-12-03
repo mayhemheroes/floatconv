@@ -1,0 +1,6 @@
+project: floatconv
+target: floatconv-fuzz
+
+cmds:
+    - cmd: ./floatconv-fuzz
+      libfuzzer: true
